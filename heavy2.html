@@ -1,0 +1,253 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>School ERP Dashboard</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
+
+.container{display:flex;}
+
+.sidebar{
+width:260px;
+background:#1e3d59;
+color:white;
+height:100vh;
+position:fixed;
+overflow:auto;
+}
+
+.sidebar h2{
+text-align:center;
+padding:20px;
+background:#163247;
+}
+
+.sidebar ul{list-style:none;}
+
+.sidebar ul li{
+padding:12px;
+cursor:pointer;
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar ul li:hover{
+background:#f7c331;
+color:black;
+}
+
+.content{
+margin-left:260px;
+padding:20px;
+width:100%;
+}
+
+.section{
+display:none;
+background:white;
+padding:20px;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+margin-bottom:20px;
+}
+
+input,select{
+width:100%;
+padding:8px;
+margin:6px 0;
+}
+
+button{
+padding:8px 15px;
+background:#1e3d59;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:10px;
+}
+
+table,th,td{
+border:1px solid #ccc;
+padding:8px;
+}
+</style>
+
+<script>
+function openSection(id){
+document.querySelectorAll(".section")
+.forEach(x=>x.style.display="none");
+document.getElementById(id).style.display="block";
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="sidebar">
+<h2>School ERP</h2>
+<ul>
+<li onclick="openSection('dashboard')">🏠 Dashboard</li>
+<li onclick="openSection('admission')">🎓 Admission</li>
+<li onclick="openSection('students')">👦 Students</li>
+<li onclick="openSection('teachers')">👨‍🏫 Teachers</li>
+<li onclick="openSection('attendance')">📅 Attendance</li>
+<li onclick="openSection('fees')">💰 Fees Management</li>
+<li onclick="openSection('exam')">📝 Exam</li>
+<li onclick="openSection('result')">📊 Result</li>
+<li onclick="openSection('certificate')">📜 Certificate</li>
+<li onclick="openSection('admit')">🎫 Admit Card</li>
+<li onclick="openSection('bus')">🚌 Transport / Bus</li>
+<li onclick="openSection('salary')">💵 Salary</li>
+<li onclick="openSection('expense')">📉 Expenses</li>
+<li onclick="openSection('library')">📚 Library</li>
+<li onclick="openSection('inventory')">🏫 Inventory</li>
+<li onclick="openSection('timetable')">⏰ Time Table</li>
+<li onclick="openSection('notice')">📢 Notice Board</li>
+<li onclick="openSection('settings')">⚙️ Settings</li>
+</ul>
+</div>
+
+<div class="content">
+
+<div id="dashboard" class="section">
+<h2>Dashboard</h2>
+<p>Welcome to School ERP Dashboard</p>
+</div>
+
+<div id="admission" class="section">
+<h2>Admission Form</h2>
+<input placeholder="Student Name">
+<input placeholder="Father Name">
+<input type="date">
+<select><option>Class</option></select>
+<button>Save</button>
+</div>
+
+<div id="students" class="section">
+<h2>Student Management</h2>
+<input placeholder="Search Student">
+<button>Search</button>
+</div>
+
+<div id="teachers" class="section">
+<h2>Teacher Management</h2>
+<input placeholder="Teacher Name">
+<input placeholder="Subject">
+<button>Save</button>
+</div>
+
+<div id="attendance" class="section">
+<h2>Attendance</h2>
+<input type="date">
+<select><option>Present</option><option>Absent</option></select>
+<button>Save</button>
+</div>
+
+<div id="fees" class="section">
+<h2>Fees Management</h2>
+<input placeholder="Student Name">
+<input placeholder="Amount">
+<input type="date">
+<button>Collect Fees</button>
+</div>
+
+<div id="exam" class="section">
+<h2>Exam Entry</h2>
+<input placeholder="Exam Name">
+<input type="date">
+<button>Save</button>
+</div>
+
+<div id="result" class="section">
+<h2>Result Entry</h2>
+<input placeholder="Student Name">
+<input placeholder="Marks">
+<button>Save</button>
+</div>
+
+<div id="certificate" class="section">
+<h2>Certificate</h2>
+<input placeholder="Student Name">
+<select>
+<option>Transfer Certificate</option>
+<option>Bonafide</option>
+</select>
+<button>Generate</button>
+</div>
+
+<div id="admit" class="section">
+<h2>Admit Card</h2>
+<input placeholder="Student Name">
+<button>Generate Admit Card</button>
+</div>
+
+<div id="bus" class="section">
+<h2>Transport / Bus</h2>
+<input placeholder="Bus Number">
+<input placeholder="Route">
+<button>Save</button>
+</div>
+
+<div id="salary" class="section">
+<h2>Salary</h2>
+<input placeholder="Teacher Name">
+<input placeholder="Amount">
+<input type="date">
+<button>Pay Salary</button>
+</div>
+
+<div id="expense" class="section">
+<h2>Expenses</h2>
+<input placeholder="Expense Type">
+<input placeholder="Amount">
+<button>Save</button>
+</div>
+
+<div id="library" class="section">
+<h2>Library</h2>
+<input placeholder="Book Name">
+<input placeholder="Student Name">
+<button>Issue</button>
+</div>
+
+<div id="inventory" class="section">
+<h2>Inventory</h2>
+<input placeholder="Item Name">
+<input placeholder="Quantity">
+<button>Add</button>
+</div>
+
+<div id="timetable" class="section">
+<h2>Time Table</h2>
+<input placeholder="Class">
+<input placeholder="Subject">
+<button>Save</button>
+</div>
+
+<div id="notice" class="section">
+<h2>Notice Board</h2>
+<input placeholder="Notice Title">
+<button>Publish</button>
+</div>
+
+<div id="settings" class="section">
+<h2>Settings</h2>
+<p>School Settings Here</p>
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
+```
